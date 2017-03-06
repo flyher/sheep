@@ -16,6 +16,8 @@ cd resources\views
 npm start
 ```
 
+open http://127.0.0.1:8889/index in your browser 
+
 #####Tools
 
 Build By Visual Studio Code
