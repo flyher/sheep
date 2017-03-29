@@ -1,7 +1,7 @@
 # sheep
 A front-end rendering solution , support IE6 , IE8 or modern browser
 
-#####install
+##### install
 
 start server
 ```shell
@@ -18,10 +18,10 @@ npm start
 
 open http://127.0.0.1:8889/index in your browser 
 
-#####Tools
+##### Tools
 
 Build By Visual Studio Code
 
-#####License
+##### License
 
 Code in sheep project is licensed under the GPL
