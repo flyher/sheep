@@ -1,24 +1,26 @@
-var initializing = false;
-function jClass(baseClass, prop) {
-    if (typeof (baseClass) === 'object') {
-        prop = baseClass;
-        baseClass = null;
-    }
-    function F() {
-        if (!initializing) {
-            this.init
-        }
-    }
-}
-sheep.Json = {
-    ApiUrl: function (route) {
-        return 'http://localhost:3000/' + route;
+// var initializing = false;
+// function jClass(baseClass, prop) {
+//     if (typeof (baseClass) === 'object') {
+//         prop = baseClass;
+//         baseClass = null;
+//     }
+//     function F() {
+//         if (!initializing) {
+//             this.init
+//         }
+//     }
+// }
+
+window.sheep = {
+    domainUrl: 'http://localhost:3000/',
+    apiUrl: function (route) {
+        return this.domainUrl + route;
     },
-    Get: function (url, callback) {
+    http: function (requestUrl, requestMethod, callback) {
         if (!$.support.leadingWhitespace) {
             // Use Microsoft XDR
             var xdr = new XDomainRequest();
-            xdr.open("get", url);
+            xdr.open(requestMethod, requestUrl);
             xdr.onload = function () {
                 var res = $.parseJSON(xdr.responseText);
                 if (res == null || typeof (res) == 'undefined') {
@@ -29,8 +31,8 @@ sheep.Json = {
             xdr.send();
         } else {
             $.ajax({
-                type: 'get',
-                url: url,
+                type: requestMethod,
+                url: requestUrl,
                 cache: true,
                 dataType: 'JSON',
                 success: function (res, sucess) {
@@ -40,3 +42,4 @@ sheep.Json = {
         }
     }
 };
+var sheep = window.sheep;

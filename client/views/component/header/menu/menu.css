@@ -1,0 +1,12 @@
+.menu {
+  width: 400px;
+  height: 50px;
+  float: right;
+  background-color: lightgreen;
+}
+.menu ul li {
+  float: left;
+  margin-right: 20px;
+  list-style-type: none;
+  color: #777;
+}

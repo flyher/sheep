@@ -1,11 +1,19 @@
 module.exports = function (callback) {
-    require('!style!csss!less!./menu.less');
-    var menuTpl = require('./menu.hbs');
-
-    var url = sheep.Json.ApiUrl('header/list');
-    sheep.Json.sheep(url, function (res) {
-        callback(menuTpl({
-            list: res.data
-        }));
-    });
+  require('!style!css!less!./menu.less');
+  var menuTpl = require('./menu.hbs');
+  // var data = {
+  //   title: 'Test menu'
+  // };
+  // return menuTpl(data);
+  var requestUrl = sheep.apiUrl('header/menu');
+  sheep.http(requestUrl, 'get', function (res) {
+    if (res.success) {
+      var data = {
+        list: res.data.list
+      };
+      callback(
+        menuTpl(data)
+      );
+    }
+  });
 };

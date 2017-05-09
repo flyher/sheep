@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "data": {
+    "list": [
+      {
+        "id": 1,
+        "key": "home",
+        "value": "Home"
+      },
+      {
+        "id": 2,
+        "key": "about",
+        "value": "About"
+      },
+      {
+        "id": 3,
+        "key": "contact",
+        "value": "Contact"
+      }
+    ]
+  }
+}

@@ -1,3 +1,6 @@
+// (function () {
+//     Component = function () { };
+// })();
 // cnblogs template code
 (function () {
     // 当前是否处于创建类的阶段

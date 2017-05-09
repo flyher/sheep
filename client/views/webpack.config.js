@@ -12,8 +12,6 @@ module.exports = {
         // path: path.join(__dirname, "/dist"),
         filename: "[name].bundle.js",
         publicPath: 'http://localhost:8889/dist/'
-        // filename: 'bundle.js',
-        // publicPath: 'http://localhost:8889/dist/'
     },
     externals: {
         // require("jquery") is external and available
