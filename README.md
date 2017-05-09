@@ -1,5 +1,5 @@
 # sheep
-A front-end rendering solution , support IE6 , IE8 or modern browser
+A front-end rendering solution , support IE6 , IE8 and modern browser
 
 ##### install
 
