@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "data": {
+    "projectname": "sheep",
+    "url": "https://github.com/flyher/sheep",
+    "describe": "A front-end rendering solution , support IE6 , IE8 or modern browser"
+  }
+}

@@ -1,16 +1,3 @@
-// var initializing = false;
-// function jClass(baseClass, prop) {
-//     if (typeof (baseClass) === 'object') {
-//         prop = baseClass;
-//         baseClass = null;
-//     }
-//     function F() {
-//         if (!initializing) {
-//             this.init
-//         }
-//     }
-// }
-
 window.sheep = {
     domainUrl: 'http://localhost:3000/',
     apiUrl: function (route) {
@@ -43,3 +30,5 @@ window.sheep = {
     }
 };
 var sheep = window.sheep;
+
+module.exports = sheep;

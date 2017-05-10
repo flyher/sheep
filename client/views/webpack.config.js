@@ -3,13 +3,20 @@ var path = require('path');
 // var ES5Shim4Webpack = require("shim4webpack");
 module.exports = {
     entry: {
+        common: [
+            './script/lib/jquery-1.8.3.js',
+            './node_modules/es5-shim',
+            './node_modules/es5-shim/es5-sham.js',
+            './script/common.js',
+            './script/component.js',
+        ],
         home: [
             './home/home.js'
         ]
     },
     devtool: 'source-map',
     output: {
-        // path: path.join(__dirname, "/dist"),
+        path: path.join(__dirname, "/dist"),
         filename: "[name].bundle.js",
         publicPath: 'http://localhost:8889/dist/'
     },
@@ -26,11 +33,20 @@ module.exports = {
             "_": "underscore",
             "handlebars": "handlebars"
         }),
-        // new webpack.optimize.UglifyJsPlugin({
-        //     compress: {
-        //         warnings: false
-        //     }
-        // })
+        new webpack.optimize.CommonsChunkPlugin("common", "common.js"),
+        // 压缩混淆
+        // 这里必须使用1.13.2的
+        // https://github.com/SamHwang1990/blog/issues/6
+        // https://github.com/xcatliu/react-ie8/issues/43
+
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            },
+            mangle: {
+                screw_ie8: false
+            }
+        })
         // new ES5Shim4Webpack({
         //     warnings: true,
         //     logContext: true
@@ -41,11 +57,20 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: "style!css"
-                // imports?shim=es5-shim/es5-shim&sham=es5-shim/es5-sham
             },
             {
                 test: /\.less$/,
                 loader: "style!css!less"
+            },
+            // {
+            //     test: /\.less$/,
+            //     exclude: /\.useable\.css$/,
+            //     loader: "style!css"
+            // },
+            {
+                test: /\.css$/,
+                exclude: /\.useable\.css$/,
+                loader: "style!css"
             },
             {
                 test: /\.hbs$/,
@@ -54,8 +79,19 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif)$/,
                 loader: 'file-loader'
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "imports?shim=es5-shim/es5-shim&sham=es5-shim/es5-sham" //兼容IE8
             }
-        ],
+        ]
+        // postLoaders: [
+        //     {
+        //         test: /\.js$/,
+        //         loaders: ['es3ify-loader']
+        //     }
+        // ]
     },
     resolve: {
         extensions: ['', '.js', '.css'],
