@@ -43,6 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/header/title', header.GetTitle);
 app.get('/header/menu', header.GetMenu);
 app.get('/home/info', home.GetInfo);
+app.get('/home/entries', home.GetEntries);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
