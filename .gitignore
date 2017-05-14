@@ -253,5 +253,5 @@ paket-files/
 
 
 # ingore dir or files
-server/node_modules
-client/node_modules
+server
+client
