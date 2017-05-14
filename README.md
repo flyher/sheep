@@ -37,6 +37,7 @@ npm install webpack@1.13.2 --save-dev
 
 open http://127.0.0.1:8889/home/home.html in your browser 
 
+[demo](https://flyher.github.com/sheep/)
 
 [demo theme](http://getbootstrap.com/examples/jumbotron-narrow/)
 
