@@ -1,12 +1,12 @@
 .info {
-  width: 100%;
+  width: 80%;
   height: 200px;
   margin: auto;
 }
 .info h1 {
-  font-size: 14pt;
+  font-size: 63px;
   color: #777;
 }
 .info p {
-  font-size: 12pt;
+  font-size: 21px;
 }

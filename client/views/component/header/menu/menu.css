@@ -2,11 +2,20 @@
   width: 400px;
   height: 50px;
   float: right;
-  background-color: lightgreen;
+}
+.menu ul {
+  float: right;
+  margin-top: 5px;
 }
 .menu ul li {
   float: left;
   margin-right: 20px;
   list-style-type: none;
-  color: #777;
+  color: #337ab7;
+  padding: 8px 10px 8px 10px;
+  cursor: pointer;
+}
+.menu ul li:hover {
+  background-color: #337ab7;
+  color: white;
 }

@@ -39,14 +39,14 @@ module.exports = {
         // https://github.com/SamHwang1990/blog/issues/6
         // https://github.com/xcatliu/react-ie8/issues/43
 
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            },
-            mangle: {
-                screw_ie8: false
-            }
-        })
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     },
+        //     mangle: {
+        //         screw_ie8: false
+        //     }
+        // })
         // new ES5Shim4Webpack({
         //     warnings: true,
         //     logContext: true

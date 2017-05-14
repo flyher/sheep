@@ -1,0 +1,13 @@
+body .home {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+body .home .body_ .info_ {
+  width: 100%;
+}
+body .home .body_ .lines_ {
+  width: 100%;
+}

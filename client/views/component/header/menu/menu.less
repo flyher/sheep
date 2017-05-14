@@ -3,13 +3,21 @@
   width: 400px;
   height: 50px;
   float: right;
-  background-color: lightgreen;
+  // background-color: @lightgreen;
   ul{
+    float: right;
+    margin-top: 5px;
     li{
       float: left;
       margin-right: 20px;
       list-style-type: none;
-      color: @silver;
+      color: @blue;
+      padding: 8px 10px 8px 10px;
+      cursor: pointer;
+    }
+    li:hover{
+      background-color: @blue;
+      color: @white;
     }
   }
 }

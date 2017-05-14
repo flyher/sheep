@@ -11,8 +11,14 @@ module.exports = function (res, callback) {
   }
 
   if (res !== null) {
-    data.title = res.data.title;
-    data.menu = res.data.menu;
+    title(res.title, function (titleHtml) {
+      data.title = titleHtml;
+      menu(res.menu, function (menuHtml) {
+        data.menu = menuHtml;
+        callback(headerTpl(data));
+      });
+    })
+
     callback(headerTpl(data));
   } else {
     title(null, function (titleHtml) {

@@ -1,34 +1,50 @@
 .header {
-  height: 50px;
-  width: 80%;
-  margin: auto;
+  height: 70px;
+  width: 100%;
+  display: inline-flex;
 }
-.header .menu {
+.header .layout {
+  width: 80%;
+  height: 60px;
+  margin: auto;
+  border-bottom: 1px solid #e5e5e5;
+}
+.header .layout .menu {
   width: 400px;
   height: 50px;
   float: right;
-  background-color: lightgreen;
 }
-.header .menu ul li {
+.header .layout .menu ul {
+  float: right;
+  margin-top: 5px;
+}
+.header .layout .menu ul li {
   float: left;
   margin-right: 20px;
   list-style-type: none;
-  color: #777;
+  color: #337ab7;
+  padding: 8px 10px 8px 10px;
+  cursor: pointer;
 }
-.header .title {
+.header .layout .menu ul li:hover {
+  background-color: #337ab7;
+  color: white;
+}
+.header .layout .title {
   width: 200px;
   height: 50px;
   float: left;
-  background-color: skyblue;
 }
-.header .title .logo {
-  width: 50px;
+.header .layout .title .logo {
+  width: 120px;
   height: 100%;
+  float: left;
 }
-.header .title .describe {
-  width: 150px;
+.header .layout .title .name {
+  width: 80px;
   height: 100%;
   color: #777;
   font-size: 14pt;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  float: left;
+  line-height: 50px;
 }

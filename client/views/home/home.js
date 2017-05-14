@@ -5,6 +5,7 @@ require('!style!css!less!../less/global.less');
 require('!style!css!less!../less/common.less');
 
 var info = require('./component/info/info');
+// var entries = require('./component/entries/entries');
 
 var Page = Component.extend({
   init: function (name) {
@@ -30,14 +31,23 @@ var Home = Page.extend({
     }
   },
   render: function () {
-    var self = this;
-    header(null, function (headerHtml) {
+    var self = this, headerData = new Object(), titleData = null, menuData = null, infoData = null;
+    // demo data
+    headerData.title = { "success": true, "data": { "logo": "logo.png", "projectname": "sheep", "url": "https://github.com/flyher/sheep", "describe": "A front-end rendering solution , support IE6 , IE8 or modern browser" } };
+    headerData.menu = { "success": true, "data": { "list": [{ "id": 1, "key": "home", "value": "Home" }, { "id": 2, "key": "about", "value": "About" }, { "id": 3, "key": "contact", "value": "Contact" }] } };
+    infoData = { "success": true, "data": { "projectname": "sheep", "url": "https://github.com/flyher/sheep", "describe": "A front-end rendering solution , support IE6 ,IE7 , IE8 and modern browser" } };
+    // 
+    header(headerData, function (headerHtml) {
       $('.header_').html(headerHtml);//多次回调获取到渲染后的header的html
     });
-    info(null, function (infoHtml) {
+    info(infoData, function (infoHtml) {
       $('.info_').html(infoHtml);
       self.regEvents('info', self);//注册事件
     });
+    // entries(null, function (entriesHtml) {
+    //   $('.entries_').html(entriesHtml);
+    //   // self.regEvents('entries', self);
+    // });
     $('.footer').html(footer);
   },
   regEvents: function (tplName, params) {

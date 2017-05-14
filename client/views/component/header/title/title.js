@@ -3,13 +3,15 @@ module.exports = function (res, callback) {
   var requestUrl = sheep.apiUrl('header/title');
   if (res !== null) {
     callback(titleTpl({
-      describe: res.data.describe
+      projectname: res.data.projectname
     }));
   } else {
     sheep.http(requestUrl, 'get', function (res) {
       if (res.success) {
         callback(
-          titleTpl(res.data.describe)
+          titleTpl({
+            projectname: res.data.projectname
+          })
         );
       }
     });
