@@ -5,17 +5,20 @@
       {
         "id": 1,
         "key": "home",
-        "value": "Home"
+        "value": "Home",
+        "url": "#"
       },
       {
         "id": 2,
         "key": "about",
-        "value": "About"
+        "value": "About",
+        "url": "https://github.com/flyher/sheep/blob/master/README.md"
       },
       {
         "id": 3,
         "key": "contact",
-        "value": "Contact"
+        "value": "Contact",
+        "url": "https://github.com/flyher/sheep"
       }
     ]
   }
