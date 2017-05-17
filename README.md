@@ -45,7 +45,6 @@ open http://127.0.0.1:8889/home/home.html in your browser
 
 [IE8 webpack](https://segmentfault.com/a/1190000007699918)
 
-
 ##### describe
 
 兼容IE8的前端渲染方案有很多：
