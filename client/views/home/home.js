@@ -26,6 +26,11 @@ var Home = Page.extend({
     'footer'
   ],
   events: {
+    // menu
+    'menu': {
+      '.menu-link click': 'menulinkClick' //点击链接事件，这里可以用a标签直接渲染，这个方法为了演示绑定事件触发
+    },
+    // 
     'info': {
       '.projectname click': 'projcenameClick',
       '.describe click': 'describeClick'
@@ -34,9 +39,9 @@ var Home = Page.extend({
   render: function () {
     var self = this, headerData = new Object(), titleData = null, menuData = null, infoData = null;
     // demo data
-    headerData.title = { "success": true, "data": { "logo": "logo.png", "projectname": "sheep", "url": "https://github.com/flyher/sheep", "describe": "A front-end rendering solution , support IE6 , IE8 or modern browser" } };
-    headerData.menu = { "success": true, "data": { "list": [{ "id": 1, "key": "home", "value": "Home" }, { "id": 2, "key": "about", "value": "About" }, { "id": 3, "key": "contact", "value": "Contact" }] } };
-    infoData = { "success": true, "data": { "projectname": "sheep", "url": "https://github.com/flyher/sheep", "describe": "A front-end rendering solution , support IE6 ,IE7 , IE8 and modern browser" } };
+    headerData.title = { "success": true, "data": { "logo": "logo.png", "projectname": "sheep", "url": "https://github.com/flyher/sheep", "describe": "A front-end rendering solution, support IE6, IE7, IE8 and modern browser" } };
+    headerData.menu = { "success": true, "data": { "list": [{ "id": 1, "key": "home", "value": "Home", "url": "#" }, { "id": 2, "key": "about", "value": "About", "url": "https://github.com/flyher/sheep/blob/master/README.md" }, { "id": 3, "key": "github", "value": "Github", "url": "https://github.com/flyher/sheep" }] } };
+    infoData = { "success": true, "data": { "projectname": "sheep", "url": "https://github.com/flyher/sheep", "describe": "A front-end rendering solution, support IE6, IE7, IE8 and modern browser" } };
     entriesData = { "success": true, "data": { "list": [{ "id": 1, "title": "Subheading", "describe": "Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum." }, { "id": 2, "title": "Subheading", "describe": "Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum." }, { "id": 3, "title": "Subheading", "describe": "Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum." }, { "id": 4, "title": "Subheading", "describe": "Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum." }, { "id": 5, "title": "Subheading", "descri6be": "Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum." }, { "id": 6, "title": "Subheading", "describe": "Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum." }] } };
     // 
     header(headerData, function (headerHtml) {
@@ -44,13 +49,17 @@ var Home = Page.extend({
     });
     info(infoData, function (infoHtml) {
       $('.info_').html(infoHtml);
-      self.regEvents('info', self);//注册事件
+      self.regEvents('info', self);//1.渲染后直接注册事件
     });
     entries(entriesData, function (entriesHtml) {
       $('.entries_').html(entriesHtml);
       // self.regEvents('entries', self);
     });
-    $('.footer').html(footer);
+    footer(function (footerHtml) {
+      $('.footer_').html(footerHtml);
+    });
+    // 2.也可以全部渲染完成注册事件
+    self.regEvents('menu', self);
   },
   regEvents: function (tplName, params) {
     /// <summary>注册指定模板事件</summary>
@@ -72,12 +81,17 @@ var Home = Page.extend({
     $(_DOMSelector).bind(_EventName, params, self[_DOMFunction]);
   },
   queryEvents: {
+    menu: {
+      menulinkClick: function () {
+        window.open();
+      }
+    },
     info: {
       projcenameClick: function () {
-        console.log('projcenameClick');
+        alert('You click the projectname');
       },
       describeClick: function (d) {
-        console.log('describeClick-' + d);
+        // console.log('describeClick-' + d);
       }
     }
   }
