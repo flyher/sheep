@@ -74,7 +74,7 @@ module.exports = {
             },
             {
                 test: /\.hbs$/,
-                loader: "handlebars-loader?helperDirs[]=" + __dirname + '/js/helpers'
+                loader: "handlebars-loader?helperDirs[]=" + __dirname + '/script/helper'
             },
             {
                 test: /\.(png|jpg|gif)$/,
