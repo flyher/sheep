@@ -16,9 +16,15 @@
       },
       {
         "id": 3,
-        "key": "contact",
-        "value": "Contact",
+        "key": "github",
+        "value": "Github",
         "url": "https://github.com/flyher/sheep"
+      },
+      {
+        "id": 4,
+        "key": "blog",
+        "value": "Blog",
+        "url": "http://blog.99diary.com/2017/03/06/sheep"
       }
     ]
   }
