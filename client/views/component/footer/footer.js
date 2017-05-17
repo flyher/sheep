@@ -1,5 +1,10 @@
-module.exports = function () {
+module.exports = function (callback) {
   require('!style!css!less!./footer.less');
   var footerTpl = require('./footer.hbs');
-  return footerTpl({});
+
+  var year = new Date().getFullYear();
+
+  callback(footerTpl({
+    year: year
+  }));
 }
