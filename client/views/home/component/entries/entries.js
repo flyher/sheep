@@ -5,15 +5,13 @@ module.exports = function (res, callback) {
   var requestUrl = sheep.apiUrl('home/entries');
   if (res !== null) {
     callback(entriesTpl({
-      title: res.data.title,
-      describe: res.data.describe
+      list: res.data.list
     }));
   } else {
     sheep.http(requestUrl, 'get', function (res) {
       if (res.success) {
         callback(entriesTpl({
-          title: res.data.title,
-          describe: res.data.describe
+          list: res.data.list
         }));
       }
     });

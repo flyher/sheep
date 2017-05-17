@@ -5,7 +5,7 @@ require('!style!css!less!../less/global.less');
 require('!style!css!less!../less/common.less');
 
 var info = require('./component/info/info');
-// var entries = require('./component/entries/entries');
+var entries = require('./component/entries/entries');
 
 var Page = Component.extend({
   init: function (name) {
@@ -22,6 +22,7 @@ var Home = Page.extend({
     'menu',
     'title',
     'info',
+    'entries',
     'footer'
   ],
   events: {
@@ -36,6 +37,7 @@ var Home = Page.extend({
     headerData.title = { "success": true, "data": { "logo": "logo.png", "projectname": "sheep", "url": "https://github.com/flyher/sheep", "describe": "A front-end rendering solution , support IE6 , IE8 or modern browser" } };
     headerData.menu = { "success": true, "data": { "list": [{ "id": 1, "key": "home", "value": "Home" }, { "id": 2, "key": "about", "value": "About" }, { "id": 3, "key": "contact", "value": "Contact" }] } };
     infoData = { "success": true, "data": { "projectname": "sheep", "url": "https://github.com/flyher/sheep", "describe": "A front-end rendering solution , support IE6 ,IE7 , IE8 and modern browser" } };
+    entriesData = { "success": true, "data": { "list": [{ "id": 1, "title": "Subheading", "describe": "Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum." }, { "id": 2, "title": "Subheading", "describe": "Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum." }, { "id": 3, "title": "Subheading", "describe": "Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum." }, { "id": 4, "title": "Subheading", "describe": "Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum." }, { "id": 5, "title": "Subheading", "descri6be": "Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum." }, { "id": 6, "title": "Subheading", "describe": "Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum." }] } };
     // 
     header(headerData, function (headerHtml) {
       $('.header_').html(headerHtml);//多次回调获取到渲染后的header的html
@@ -44,10 +46,10 @@ var Home = Page.extend({
       $('.info_').html(infoHtml);
       self.regEvents('info', self);//注册事件
     });
-    // entries(null, function (entriesHtml) {
-    //   $('.entries_').html(entriesHtml);
-    //   // self.regEvents('entries', self);
-    // });
+    entries(entriesData, function (entriesHtml) {
+      $('.entries_').html(entriesHtml);
+      // self.regEvents('entries', self);
+    });
     $('.footer').html(footer);
   },
   regEvents: function (tplName, params) {
