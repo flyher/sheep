@@ -4,12 +4,10 @@
     "server": "./node_modules/.bin/http-server -p 8080",
     "dev": "webpack-dev-server --progress --colors --port 8889"
   },
-  "name": "component-communication",
-  "version": "0.0.5",
-  "main": "components/index.js",
-  "dependencies": {
-    "react-dom": "^15.3.2"
-  },
+  "name": "sheep",
+  "version": "0.2.0",
+  "main": "home/home.js",
+  "dependencies": {},
   "devDependencies": {
     "css-loader": "^0.25.0",
     "es3ify-loader": "^0.2.0",
