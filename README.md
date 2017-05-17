@@ -46,6 +46,21 @@ open http://127.0.0.1:8889/home/home.html in your browser
 [IE8 webpack](https://segmentfault.com/a/1190000007699918)
 
 
+##### describe
+
+兼容IE8的前端渲染方案有很多：
+
+
+[React v0.14 及其以前版本](https://facebook.github.io/react/blog/2016/01/12/discontinuing-ie8-support.html)
+
+Angualar v1.2 及其以前版本
+
+Backbone
+
+React 和 AngularJS 后续版本如果想支持，可以用 [polyfill](https://github.com/inexorabletash/polyfill) 和 [es5-shim](https://github.com/es-shims/es5-shim) 来解决，正如本项目一样，为了解决webpack打包中存在的IE8兼容问题，但是值得注意的是，本项目源码本身就支持IE8。
+
+
+关于sheep的后期博文将在[我的博客](http://blog.99diary.com/2017/03/06/sheep)这篇文章中给出，这个项目仅仅是一个学习与探索的过程。
 
 ##### Tools
 
