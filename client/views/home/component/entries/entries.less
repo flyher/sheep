@@ -6,6 +6,7 @@
   display: table;
   .entry{
     width: 50%;
+    min-height: 90px;
     float: left;
     h4{
       font-weight: 500;
@@ -15,11 +16,21 @@
       margin-bottom: 10px;
       padding-left: 15px;
       padding-right: 15px;
+      cursor: pointer;
+    }
+    h4:hover{
+      text-decoration: underline;
     }
     p{
       padding-left: 15px;
       padding-right: 15px;
       margin: 0 0 10px;
+    }
+    .blue{
+      color: @blue;
+    }
+    .green{
+      color: @green;
     }
   }
 }
