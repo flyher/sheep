@@ -1,8 +1,6 @@
 # sheep
 A front-end rendering solution , support IE6 , IE8 and modern browser
 
-
-
 ##### version 0.2
 
 1. rewrite all code
@@ -10,14 +8,8 @@ A front-end rendering solution , support IE6 , IE8 and modern browser
 2. run in IE5,IE6,IE7,IE8 and modern browser success( fix issue [#1](https://github.com/flyher/sheep/issues/1))
 
 
-##### install
+##### browser
 
-start server
-```shell
-cd server
-npm install
-node app
-```
 
 start client
 ```shell
@@ -64,7 +56,3 @@ React 和 AngularJS 后续版本如果想支持，可以用 [polyfill](https://g
 ##### Tools
 
 Build By Visual Studio Code
-
-##### License
-
-Code in sheep project is licensed under the GPL
