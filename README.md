@@ -9,6 +9,7 @@ A front-end rendering solution , support IE6 , IE8 and modern browser
 
 2. run in IE5,IE6,IE7,IE8 and modern browser success( fix issue [#1](https://github.com/flyher/sheep/issues/1))
 
+3. support dom bind event
 
 ##### install
 
