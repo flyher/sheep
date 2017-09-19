@@ -23,6 +23,7 @@ node app
 start client
 ```shell
 cd resources\views
+npm install
 npm start
 ```
 
