@@ -1,7 +1,11 @@
 # sheep
+
+[![Build Status](https://travis-ci.org/flyher/sheep.svg?branch=dev_0.2)](https://travis-ci.org/flyher/sheep?branch=dev_0.2)
+[![Release Version](https://img.shields.io/github/release/flyher/sheep.svg)](https://github.com/flyher/sheep/releases)
+[![Issues](https://img.shields.io/github/issues/flyher/sheep.svg)](https://github.com/flyher/sheep/issues)
+[![Software License](https://img.shields.io/github/license/flyher/sheep.svg)](https://github.com/flyher/sheep/blob/dev_0.2/LICENSE)
+
 A front-end rendering solution , support IE6 , IE8 and modern browser
-
-
 
 ##### version 0.2
 
