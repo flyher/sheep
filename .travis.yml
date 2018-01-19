@@ -1,0 +1,30 @@
+language: node_js
+node_js:
+  - "8"
+
+cache:
+  directories:
+    - node_modules
+
+before_install: 
+  - cd client/views
+  - npm install
+
+# script:
+#   - npm start
+
+# after_script:
+#   - process.exit(0)
+
+
+# blocklist
+branches:
+  except:
+  - gh-pages
+
+# safelist
+branches:
+  only:
+  - dev_0.1
+  - dev_0.2
+  - master
