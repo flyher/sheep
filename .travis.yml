@@ -10,11 +10,11 @@ before_install:
   - cd client/views
   - npm install
 
-# script:
-#   - npm start
+script:
+  - npm start
 
-# after_script:
-#   - exit
+after_script:
+  - process.exit(0)
 
 
 # blocklist
