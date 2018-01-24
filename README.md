@@ -51,10 +51,17 @@ open http://127.0.0.1:8889/home/home.html in your browser
 
 [IE8 webpack](https://segmentfault.com/a/1190000007699918)
 
+
+本项目中jquery为1.83版本，jquery 1.83存在安全漏洞：
+
+[CVE-2015-9251](https://nvd.nist.gov/vuln/detail/CVE-2015-9251)
+
+[CVE-2016-10707](https://nvd.nist.gov/vuln/detail/CVE-2016-10707)
+
+
 ##### describe
 
 兼容IE8的前端渲染方案有很多：
-
 
 [React v0.14 及其以前版本](https://facebook.github.io/react/blog/2016/01/12/discontinuing-ie8-support.html)
 
@@ -66,6 +73,7 @@ React 和 AngularJS 后续版本如果想支持，可以用 [polyfill](https://g
 
 
 关于sheep的后期博文将在[我的博客](http://blog.99diary.com/2017/03/06/sheep)这篇文章中给出，这个项目仅仅是一个学习与探索的过程。
+
 
 ##### Tools
 

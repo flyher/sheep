@@ -5,7 +5,6 @@ module.exports = {
     entry: {
         common: [
             './script/lib/jquery-1.8.3.js',
-            './node_modules/es5-shim',
             './node_modules/es5-shim/es5-sham.js',
             './script/common.js',
             './script/component.js',
