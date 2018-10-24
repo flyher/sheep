@@ -1,4 +1,4 @@
-# sheep
+# Sheep
 
 [![Build Status](https://travis-ci.org/flyher/sheep.svg?branch=dev_0.2)](https://travis-ci.org/flyher/sheep?branch=dev_0.2)
 [![Release Version](https://img.shields.io/github/release/flyher/sheep.svg)](https://github.com/flyher/sheep/releases)
@@ -7,7 +7,7 @@
 
 A front-end rendering solution , support IE6 , IE8 and modern browser
 
-#### version 0.2
+#### Version 0.2
 
 1. rewrite all code
 
@@ -15,7 +15,7 @@ A front-end rendering solution , support IE6 , IE8 and modern browser
 
 3. support dom bind event
 
-#### install
+#### Install
 
 start server
 ```shell
@@ -31,9 +31,9 @@ npm install
 npm start
 ```
 
-package code 
+release client
 ```shell
-webpack -w
+npm run release
 ```
 
 install webpack version 1.13.2 , see the [issue](https://github.com/SamHwang1990/blog/issues/6) here
@@ -58,7 +58,7 @@ jquery v1.83 have two CVE：
 
 [CVE-2016-10707](https://nvd.nist.gov/vuln/detail/CVE-2016-10707)
 
-update:2018-10-24
+update: 2018-10-24
 
 The issue will happen in Win10 when you execute `webpack -w` to package sheep:
 ```xml
@@ -98,7 +98,7 @@ package
 npm run release
 ```
 
-#### describe
+#### Describe
 
 兼容IE8的前端渲染方案有很多：
 
