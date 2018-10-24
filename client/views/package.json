@@ -2,7 +2,8 @@
   "scripts": {
     "start": "npm run server | npm run dev",
     "server": "./node_modules/.bin/http-server -p 8080",
-    "dev": "webpack-dev-server --progress --colors --port 8889"
+    "dev": "webpack-dev-server --progress --colors --port 8889",
+    "release": "webpack -p --progress --colors"
   },
   "name": "sheep",
   "version": "0.2.0",

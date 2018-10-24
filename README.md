@@ -7,7 +7,7 @@
 
 A front-end rendering solution , support IE6 , IE8 and modern browser
 
-##### version 0.2
+#### version 0.2
 
 1. rewrite all code
 
@@ -15,7 +15,7 @@ A front-end rendering solution , support IE6 , IE8 and modern browser
 
 3. support dom bind event
 
-##### install
+#### install
 
 start server
 ```shell
@@ -52,14 +52,53 @@ open http://127.0.0.1:8889/home/home.html in your browser
 [IE8 webpack](https://segmentfault.com/a/1190000007699918)
 
 
-本项目中jquery为1.83版本，jquery 1.83存在安全漏洞：
+jquery v1.83 have two CVE：
 
 [CVE-2015-9251](https://nvd.nist.gov/vuln/detail/CVE-2015-9251)
 
 [CVE-2016-10707](https://nvd.nist.gov/vuln/detail/CVE-2016-10707)
 
+update:2018-10-24
 
-##### describe
+The issue will happen in Win10 when you execute `webpack -w` to package sheep:
+```xml
+Invalid configuration object. Webpack has been initialised using a configuration object that does not match the API schema.
+ - configuration.entry should be one of these:
+   object { <key>: non-empty string | [non-empty string] } | non-empty string | [non-empty string] | function
+   -> The entry point(s) of the compilation.
+   Details:
+    * configuration.entry['home'] should be a string.
+      -> The string is resolved to a module which is loaded upon startup.
+    * configuration.entry['home'] should not be empty.
+    * configuration.entry should be a string.
+      -> An entry point without name. The string is resolved to a module which is loaded upon startup.
+    * configuration.entry should be an array:
+      [non-empty string]
+    * configuration.entry should be an instance of function
+      -> A Function returning an entry object, an entry string, an entry array or a promise to these things.
+ - configuration.module has an unknown property 'loaders'. These properties are valid:
+   object { exprContextCritical?, exprContextRecursive?, exprContextRegExp?, exprContextRequest?, noParse?, rules?, defaultRules?, unknownContextCritical?, unknownContextRecursive?, unknownContextRegExp?, unknownContextRequest?, unsafeCache?, wrappedContextCritical?, wrappedContextRecursive?, wrappedContextRegExp?, strictExportPresence?, strictThisContextOnImports? }
+   -> Options affecting the normal modules (`NormalModuleFactory`).
+ - configuration.resolve.extensions[0] should not be empty.
+   -> A non-empty string
+ - configuration.resolveLoader has an unknown property 'fallback'. These properties are valid:
+   object { alias?, aliasFields?, cachePredicate?, cacheWithContext?, descriptionFiles?, enforceExtension?, enforceModuleExtension?, extensions?, fileSystem?, mainFields?, mainFiles?, moduleExtensions?, modules?, plugins?, resolver?, symlinks?, concord?, unsafeCache?, useSyncFileSystemCalls? }
+   -> Options for the resolver when resolving loaders
+```
+
+```shell
+"release": "webpack -p --progress --colors"
+```
+
+You can add this to `package.json`
+
+package
+
+```shell
+npm run release
+```
+
+#### describe
 
 兼容IE8的前端渲染方案有很多：
 
@@ -75,10 +114,10 @@ React 和 AngularJS 后续版本如果想支持，可以用 [polyfill](https://g
 关于sheep的后期博文将在[我的博客](http://blog.99diary.com/2017/03/06/sheep)这篇文章中给出，这个项目仅仅是一个学习与探索的过程。
 
 
-##### Tools
+#### Tools
 
 Build By Visual Studio Code
 
-##### License
+#### License
 
 Code in sheep project is licensed under the GPL
